@@ -7,24 +7,11 @@ import Image from './components/Image';
 import Input from './components/Input';
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-        text: "Hola mundo",
-        text2: "Estoy aprendiendo React.js"
-    };
-    this.onClick = this.onClick.bind(this)
-  }
-
-  onClick(e){
-    this.setState({text2: "El valor cambio"});
-  }
-
-
   render() {
     return (
       <div >
-
+        <Image id={1} src=""></Image>
+        <Input id={2} type="text"></Input>
       </div>
     );
   }
