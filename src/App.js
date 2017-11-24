@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Components
+import Image from './components/Image';
+import Input from './components/Input';
+
 class App extends Component {
   constructor(){
     super();
@@ -20,8 +24,7 @@ class App extends Component {
   render() {
     return (
       <div >
-          <h2 onClick = {this.onClick}>{this.state.text}</h2>
-          <h4>{this.state.text2}</h4>
+
       </div>
     );
   }
