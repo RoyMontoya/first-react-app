@@ -3,22 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  getBox(number){
-    return (
-      <div>
-        <h2>
-        {"Hola soy la caja numero # ".concat(number)}
-        </h2>
-      </div>
-    )
+  constructor(){
+    super();
+    this.state = {
+        text: "Hola mundo",
+        text2: "Estoy aprendiendo React.js"
+    };
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick(e){
+    this.setState({text2: "El valor cambio"});
   }
 
 
   render() {
     return (
       <div >
-          {this.getBox(1)}
-          {this.getBox(2)}
+          <h2 onClick = {this.onClick}>{this.state.text}</h2>
+          <h4>{this.state.text2}</h4>
       </div>
     );
   }
