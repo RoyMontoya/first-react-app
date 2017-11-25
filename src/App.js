@@ -19,36 +19,52 @@ class App extends Component {
   //   alert(0)
   //   this.setState({inputType: 'number'});
   // }
+  // button practice
+  // constructor(){
+  //   super();
+  //
+  //   this.state = {
+  //     label: "0"
+  //   };
+  //
+  //   this.onClickButton = this.onClickButton.bind(this);
+  // }
+  //
+  // onClickButton(e){
+  //   if(e.target.id == "b1"){
+  //     this.setState({ label: "uno"});
+  //   }else if(e.target.id == "b2"){
+  //     this.setState({ label: "dos"});
+  //   }else{
+  //     this.setState({ label: "tres"});
+  //   }
+  // }
   constructor(){
     super();
-
     this.state = {
-      label: "0"
+        inputValue : ''
     };
 
-    this.onClickButton = this.onClickButton.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
-  onClickButton(e){
-    if(e.target.id == "b1"){
-      this.setState({ label: "uno"});
-    }else if(e.target.id == "b2"){
-      this.setState({ label: "dos"});
-    }else{
-      this.setState({ label: "tres"});
-    }
+  onChange(e){
+    this.setState({inputValue: e.target.value})
   }
+
 
   render() {
     return (
       <div >
         {/* <Image id={1} src="" onClickChild = {this.onClickChild}></Image>
         <Input id={2} type= {this.state.inputType}></Input> */}
-
-        <button id = "b1" onClick = {this.onClickButton}>Click 1</button>
+        {/*  button practice*/}
+        {/* <button id = "b1" onClick = {this.onClickButton}>Click 1</button>
         <button id = "b2" onClick = {this.onClickButton}>Click 2</button>
         <button id = "b3" onClick = {this.onClickButton}>Click 3</button>
-        <label className="App-label">{this.state.label}</label>
+        <label className="App-label">{this.state.label}</label> */}
+        <input type = "text" id = "input1" value = {this.state.inputValue} onChange = {this.onChange}/>
+        <label className="App-label">{this.state.inputValue}</label>
       </div>
     );
   }
